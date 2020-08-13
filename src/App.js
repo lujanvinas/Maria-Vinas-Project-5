@@ -3,70 +3,102 @@ import firebase from './firebase.js';
 import './App.css';
 
 
-class App extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      items: [],
-      currentItem: {
-        text:'',
-        key: ''
-      }
-    }
-    this.handleInput = this.handleInput.bind(this);
-    this.addItem = this.addItem.bind(this);
 
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      items: [],
+      userInput:""
+    }
   }
 
-  handleInput(e){
-    this.setState({
-      currentItem:{
-        text: e.target.value,
-        key:Date.now()
+  componentDidMount() {
+    const dbRef = firebase.database().ref();
+
+    dbRef.on('value', (snapshot) => {
+      console.log(snapshot.val());
+
+      const data = snapshot.val();
+
+      const newItemsArray = [];
+
+      for (let propertyName in data) {
+        const itemObject = {
+          id: propertyName,
+          item: data[propertyName]
+        }
+        newItemsArray.push( itemObject );
       }
+
+      this.setState({
+        items: newItemsArray
+      })
     })
   }
 
-  addItem(e){
-    e.preventDefault();
-    const newItem= this.state.currentItem;
-    console.log(newItem);
-    if(newItem.text!==""){
-      const newItems=[...this.state.items, newItems];
-      this.setState({
-        items:newItems,
-        currentItem:{
-          text: '',
-          key:''
-        }
-      })
-    }
+
+  handleChange = (e) => {
+    this.setState({
+      userInput: e.target.value
+    
+    })
   }
+
+  handleClick = (e) => {
+    e.preventDefault();
+  
+
+    const dbRef = firebase.database().ref();
+
+    dbRef.push(this.state.userInput);
+    // this will add the new items to the firebase database
+
+    this.setState({
+      userInput:""
+    })
+  }
+
+
+  // deleting items from database
+  deleteItem = (itemId) => {
+    const dbRef= firebase.database().ref();
+    dbRef.child(itemId).remove();
+  }
+
 
   render(){
     return (
       <div className="App">
         <h1>Packing List</h1>
-        <h2>Going on a trip? Add items here:</h2>
-        <form id="packing-list" onSubmit={this.addItem}>
-          <input type="text" placeholder="Enter Item" value= {this.state.currentItem.text} onChange={this.handleInput}/>
-          <button type="submit">Add item</button>
-        </form>
-        <ul>
-        {/* {
-          this.state.books.map((book) => {
-            return <li>{book}</li>
-          })      
-          
-        } */}
-        </ul>
+        <h2>Going on a trip? Time to pack!</h2>
         
+       
+        <form action="submit">
+          <label htmlFor="newItem">Add items to my list</label>
+          <input onChange= { this.handleChange } value={ this.state.userInput } type="text" id= "newItem" placeholder="i.e. toothbrush"/>
+
+          <button onClick= { this.handleClick }>Add item</button>
+
+        </form>
+
+        <ul>
+        {
+          this.state.items.map( (myItem) => {
+
+            return (
+              <li key={myItem.id}>
+              <p> {myItem.item} - {myItem.id} </p>
+
+              <button onClick={ () => this.deleteItem(myItem.id) }>delete</button>
+              </li>
+            )
+          })
+        }
+        </ul>  
       </div>
     );
   }
-  
-
-
-  }
+}
 
 export default App;

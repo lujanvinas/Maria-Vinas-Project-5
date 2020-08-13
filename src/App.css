@@ -5,30 +5,47 @@ html {
 }
 
 body {
-  background: linear-gradient(to right, #a1ffce, #faffd1); 
+  /* background-image: url('assets/suitcase-background.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  background-position: center; */
+ background: linear-gradient(to right, #fd746c, #ff9068);
+ font-family: 'Montserrat', sans-serif;
 }
 
 h1,
 h2{
-  font-size: 7rem;
-  letter-spacing: 1.5px;
   line-height: 50px;
+  color: white;
+  letter-spacing: 1px;
+  
+}
+h1{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 8rem;
+  letter-spacing: 2px;
+  color:black;
 }
 
 h2{
-  font-size: 4rem;
+  font-size: 3rem;
 }
+
+
 
 
 .App {
   text-align: center;
   margin:50px auto;
+  /* border: 1px solid red; */
 }
 
 
-#packing-list input {
+input {
   background-color:papayawhip;
-  width:300px;
+  width:450px;
   height:50px;
   padding: 0 20px;
   margin:20px;
@@ -38,24 +55,51 @@ h2{
   color:black;
 }
 
-#packing-list input::placeholder {
+input::placeholder {
   color: tan;
-  
 }
 
-#packing-list button {
+button {
   height:50px;
-  width:100px;
+  width:150px;
   border-radius: 5px;
   border:0;
-  background-color: #F2CD60;
+  background-color: black;
+  color:white;
+  /* F2CD60 */
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
 }
 
-#packing-list button:hover{
+button:hover{
   background-color: #9684A1;
+  color:black;
 }
 
 
+label{
+  font-size: 2.2rem;
+}
+
+
+
+ul li{
+  font-size: 1.8rem;
+  list-style-type: none;
+  width: 50%;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 50px auto;
+  background-color: #9684A1;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li button{
+  background-color: #9684A1;
+
+  
+}
 
