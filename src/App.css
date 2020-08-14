@@ -4,22 +4,27 @@ html {
   padding:0;
 }
 
+
+.App {
+  text-align: center;
+  width: 85%;
+}
+
 body {
-  /* background-image: url('assets/suitcase-background.jpg');
+  background-image: url('assets/background-travel.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: contain;
-
-  background-position: center; */
- background: linear-gradient(to right, #fd746c, #ff9068);
- font-family: 'Montserrat', sans-serif;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1,
-h2{
+h2,
+h3{
   line-height: 50px;
-  color: white;
   letter-spacing: 1px;
+  margin-bottom: 80px;
   
 }
 h1{
@@ -27,79 +32,192 @@ h1{
   font-size: 8rem;
   letter-spacing: 2px;
   color:black;
+  
 }
 
 h2{
   font-size: 3rem;
 }
 
-
-
-
-.App {
-  text-align: center;
-  margin:50px auto;
-  /* border: 1px solid red; */
+h3{
+  font-size: 2.5rem;
+  margin-bottom: 0px;
+  display: none;
 }
 
+form{
+  width: 70%;
+  background-color: palegoldenrod;
+  margin:0 auto;
+  padding: 30px 0;
+  border-radius: 10px;
+}
 
 input {
-  background-color:papayawhip;
-  width:450px;
-  height:50px;
+  background-color: pink;
+  width: 70%;
+  height: 60px;
   padding: 0 20px;
-  margin:20px;
+  margin: 20px;
   border: 0;
   font-size: 1.8rem;
   border-radius: 10px;
-  color:black;
+  color: black;
+ 
 }
 
 input::placeholder {
-  color: tan;
+  color: grey;
 }
 
 button {
-  height:50px;
-  width:150px;
+  height:60px;
+  width:125px;
   border-radius: 5px;
   border:0;
   background-color: black;
   color:white;
-  /* F2CD60 */
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
+  margin:0 auto;
 }
 
 button:hover{
-  background-color: #9684A1;
+  background-color: lightsteelblue;
   color:black;
 }
 
 
 label{
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  display: block;
 }
 
+ul{
+  padding:0;
+}
 
 
 ul li{
   font-size: 1.8rem;
   list-style-type: none;
-  width: 50%;
-  padding: 15px;
+  width: 70%;
   border-radius: 10px;
-  margin: 50px auto;
-  background-color: #9684A1;
+  margin: 20px auto;
+  background-color: lightsteelblue;
   text-align: left;
-  display: flex;
-  justify-content: space-between;
+  position:relative;
+  
+}
+
+ul li p{
+  padding: 20px;
 }
 
 ul li button{
-  background-color: #9684A1;
+  color:black;
+  height: 50px;
+  background-color:transparent;
+  position:absolute;
+  right:-20px;
+  top:10px;
 
+}
+
+ul li button:hover {
+  background-color:transparent;
+  color:white;
+
+}
+
+.faicons {
+  font-size: 2.5rem;
+}
+
+
+/* mediaQueries */
+
+@media (max-width:1280px){
+  h1, h2, h3{
+    margin-bottom: 50px;
+  }
+
+
+  form {
+    width: 80%;
+  }
+
+  input {
+    width: 85%;
+  }
+
+  ul li {
+    width: 80%;
+  }
+}
+
+@media (max-width:700px){
+  
+  html {
+    font-size: 56%;
+  }
+
+  .App{
+    margin: 0 auto;
+    width:90%;
+  }
+
+  h2, h3 {
+    margin-bottom: 30px;
+  }
+
+  form{
+    background-color: transparent;
+    width:90%;
+  }
+
+  form button{
+    width:100%;
+    font-weight: bold;
+  }
+
+  input{
+    margin-left:0;
+    margin-right:0;
+    width: 90%;
+  }
+
+  ul li{
+    width:90%;
+  }
+
+}
+
+@media (max-width:500px){
+
+
+  input{
+    width: 94%;
+    padding: 0 3%;
+  }
   
 }
+
+@media (max-width:400px){
+
+html{
+  font-size: 52%;
+}
+
+h1{
+  line-height: 60px;
+}
+
+h2{
+  line-height: 40px;
+}
+
+}
+
 

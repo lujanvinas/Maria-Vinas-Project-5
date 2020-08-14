@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import firebase from './firebase.js';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -72,11 +75,12 @@ class App extends Component {
       <div className="App">
         <h1>Packing List</h1>
         <h2>Going on a trip? Time to pack!</h2>
+        <h3>Add items to your list:</h3>
         
        
         <form action="submit">
-          <label htmlFor="newItem">Add items to my list</label>
-          <input onChange= { this.handleChange } value={ this.state.userInput } type="text" id= "newItem" placeholder="i.e. toothbrush"/>
+          <label htmlFor="newItem">Add items to your list</label>
+          <input onChange= { this.handleChange } value={ this.state.userInput } type="text" id= "newItem" placeholder="i.e. passport"/>
 
           <button onClick= { this.handleClick }>Add item</button>
 
@@ -88,9 +92,13 @@ class App extends Component {
 
             return (
               <li key={myItem.id}>
-              <p> {myItem.item} - {myItem.id} </p>
+              <p> {myItem.item} - {myItem.id}
+                
 
-              <button onClick={ () => this.deleteItem(myItem.id) }>delete</button>
+              <button onClick={ () => this.deleteItem(myItem.id) }>
+              <FontAwesomeIcon className="faicons" icon={faTrash} />
+                  </button>
+              </p>
               </li>
             )
           })
