@@ -4,10 +4,10 @@ html {
   padding:0;
 }
 
-
 .App {
   text-align: center;
   width: 85%;
+  max-width: 1440px;
 }
 
 body {
@@ -120,7 +120,7 @@ ul li button{
   height: 50px;
   background-color:transparent;
   position:absolute;
-  right:-20px;
+  right:-35px;
   top:10px;
 
 }

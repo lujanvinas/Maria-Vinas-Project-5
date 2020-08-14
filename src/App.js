@@ -20,7 +20,6 @@ class App extends Component {
     const dbRef = firebase.database().ref();
 
     dbRef.on('value', (snapshot) => {
-      console.log(snapshot.val());
 
       const data = snapshot.val();
 
@@ -50,12 +49,11 @@ class App extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-  
 
     const dbRef = firebase.database().ref();
-
+    
+    // add new items to the firebase database
     dbRef.push(this.state.userInput);
-    // this will add the new items to the firebase database
 
     this.setState({
       userInput:""
@@ -89,12 +87,10 @@ class App extends Component {
         <ul>
         {
           this.state.items.map( (myItem) => {
-
             return (
               <li key={myItem.id}>
-              <p> {myItem.item} - {myItem.id}
-                
-
+              <p> 
+              {myItem.item} 
               <button onClick={ () => this.deleteItem(myItem.id) }>
               <FontAwesomeIcon className="faicons" icon={faTrash} />
                   </button>
