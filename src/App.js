@@ -47,7 +47,7 @@ class App extends Component {
     })
   }
 
-  handleClick = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     const dbRef = firebase.database().ref();
@@ -68,19 +68,30 @@ class App extends Component {
   }
 
 
+
   render(){
     return (
       <div className="App">
-        <h1>Packing List</h1>
+        <h1>PackPal</h1>
         <h2>Going on a trip? Time to pack!</h2>
         <h3>Add items to your list:</h3>
         
        
-        <form action="submit">
+        <form onSubmit = {this.handleSubmit}>
           <label htmlFor="newItem">Add items to your list</label>
-          <input onChange= { this.handleChange } value={ this.state.userInput } type="text" id= "newItem" placeholder="i.e. passport"/>
+          <input 
+          className= "newItem" 
+          type="text" 
+          required= "required" 
+          // requiredTxt= "please enter an item"
+          placeholder="i.e. passport" 
+          aria-label="enter an item here"
+          onChange= { this.handleChange } 
+          value={ this.state.userInput } />
 
-          <button onClick= { this.handleClick }>Add item</button>
+          <button type="submit" 
+          // onClick= { this.handleClick }
+          >Add item</button>
 
         </form>
 
