@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Maria-Vinas-Project-5/static/css/main.abb00811.chunk.css",
-    "main.js": "/Maria-Vinas-Project-5/static/js/main.25fc954b.chunk.js",
-    "main.js.map": "/Maria-Vinas-Project-5/static/js/main.25fc954b.chunk.js.map",
+    "main.css": "/Maria-Vinas-Project-5/static/css/main.23a8efa8.chunk.css",
+    "main.js": "/Maria-Vinas-Project-5/static/js/main.095b7827.chunk.js",
+    "main.js.map": "/Maria-Vinas-Project-5/static/js/main.095b7827.chunk.js.map",
     "runtime-main.js": "/Maria-Vinas-Project-5/static/js/runtime-main.a1594eb1.js",
     "runtime-main.js.map": "/Maria-Vinas-Project-5/static/js/runtime-main.a1594eb1.js.map",
     "static/js/2.278e738b.chunk.js": "/Maria-Vinas-Project-5/static/js/2.278e738b.chunk.js",
     "static/js/2.278e738b.chunk.js.map": "/Maria-Vinas-Project-5/static/js/2.278e738b.chunk.js.map",
     "index.html": "/Maria-Vinas-Project-5/index.html",
-    "precache-manifest.ce636af264f9783bd0fb92451352b32b.js": "/Maria-Vinas-Project-5/precache-manifest.ce636af264f9783bd0fb92451352b32b.js",
+    "precache-manifest.9f9e5f327cb450861140d871742a8ab1.js": "/Maria-Vinas-Project-5/precache-manifest.9f9e5f327cb450861140d871742a8ab1.js",
     "service-worker.js": "/Maria-Vinas-Project-5/service-worker.js",
-    "static/css/main.abb00811.chunk.css.map": "/Maria-Vinas-Project-5/static/css/main.abb00811.chunk.css.map",
+    "static/css/main.23a8efa8.chunk.css.map": "/Maria-Vinas-Project-5/static/css/main.23a8efa8.chunk.css.map",
     "static/js/2.278e738b.chunk.js.LICENSE.txt": "/Maria-Vinas-Project-5/static/js/2.278e738b.chunk.js.LICENSE.txt",
     "static/media/App.css": "/Maria-Vinas-Project-5/static/media/background-travel.66544211.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.a1594eb1.js",
     "static/js/2.278e738b.chunk.js",
-    "static/css/main.abb00811.chunk.css",
-    "static/js/main.25fc954b.chunk.js"
+    "static/css/main.23a8efa8.chunk.css",
+    "static/js/main.095b7827.chunk.js"
   ]
 }
